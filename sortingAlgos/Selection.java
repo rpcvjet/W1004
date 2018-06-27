@@ -14,20 +14,18 @@ public class Selection {
 
         int hold = 0;
 
-        for(int i = 0; i < array.length - 1; i++ ) {
+        for(int i = 0; i < array.length ; i++ ) {
             int minIndex = i;
 
            for(int j = i + 1; j < array.length; j++){
              if(array[j] < array[minIndex]){
-                minIndex = j;
-                //swap
-                int temp = array[minIndex];
-                array[minIndex] = array[i];
-                array[i] = temp;
-            }
-
+                minIndex = j;   
+                }    
            }
-
+            //swap
+            hold = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = hold;
         }
 
         System.out.println(Arrays.toString(array));
